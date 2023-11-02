@@ -2,7 +2,7 @@ const overview = document.querySelector(".overview");
 const username = "bravalo";
 
 const gitUserInfo = async function () {
-    const userInfo = await fetch(`https://api.github.com/users${username}`);
+    const userInfo = await fetch(`https://api.github.com/users/${username}`);
     const data = await userInfo.json();
     displayUserInfo(data);
 };
@@ -14,7 +14,7 @@ const displayUserInfo = function (data) {
     div.classList.add("user-info");
     div.innerHTML = `
       <figure>
-        <img alt="user avatar" src=$(data.avatar_url) />
+        <img alt="user avatar" src=${data.avatar_url} />
       </figure>
       <div>
           <p><strong>Name:</strong> ${data.name}</p>
